@@ -124,11 +124,35 @@
   }
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .hoverable:hover {
   background-color: var(--color-blue-100);
 }
 
 th {
   padding: 0.5rem;
+}
+
+.header-top, .header-bottom {
+  position: sticky;
+  background-color: white;
+}
+
+.header-top {
+  top: 0;
+}
+.header-bottom {
+  top: 80px
 }
 
