@@ -25,19 +25,19 @@ export default function RowContent () {
                     <ul className="flex flex-col gap-2">
                         <li className="flex flex-col ">
                             <span>1 review test test test test</span>
-                            <span className="text-gray-400">- Review's Author</span>
+                            <span className="text-gray-400">- review Author</span>
                         </li>
                         <li className="flex flex-col ">
                             <span>1 review test test test test</span>
-                            <span className="text-gray-400">- Review's Author</span>
+                            <span className="text-gray-400">- review Author</span>
                         </li>
                         <li className="flex flex-col ">
                             <span>1 review test test test test</span>
-                            <span className="text-gray-400">- Review's Author</span>
+                            <span className="text-gray-400">- review Author</span>
                         </li>
                         <li className="flex flex-col ">
                             <span>1 review test test test test</span>
-                            <span className="text-gray-400">- Review's Author</span>
+                            <span className="text-gray-400">- review Author</span>
                         </li>
                     </ul>
                 </div>

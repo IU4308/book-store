@@ -1,7 +1,5 @@
-import { Accordion } from "@radix-ui/react-accordion";
 import Header from "./my-components/Header";
 import Row from "./my-components/Row";
-import RowContent from "./my-components/RowContent";
 
 
 export default function Home() {
