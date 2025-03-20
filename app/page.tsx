@@ -53,13 +53,14 @@ export default function Home() {
                         reviews={reviews}
                         handleReviews={handleReviews}
                     />
-                    <ul className="py-2 mx-auto grid grid-cols-26 ">
+                    <ul className="py-2 mx-auto grid grid-cols-27 ">
                         <li className="px-2 "></li>
                         <li className="px-2 ">#</li>
                         <li className="px-2 col-span-6">ISBN</li>
                         <li className="px-2 col-span-6">Title</li>
                         <li className="px-2 col-span-6">Author</li>
                         <li className="px-2 col-span-6">Publisher</li>
+                        <li></li>
                     </ul>
                     <div className="h-[1px] bg-[#000]"></div>
                 </div>

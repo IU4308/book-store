@@ -5,6 +5,7 @@ import RowContent from "./RowContent"
 import { useState } from "react"
 import { Book } from '../Book';
 import { RowProps } from '../definitions';
+import { AiFillLike } from 'react-icons/ai';
 
 export default memo(function Row ({ 
     locale,
@@ -31,7 +32,7 @@ export default memo(function Row ({
     return (
         <>
             <ul 
-                className="hoverable cursor-pointer grid grid-cols-26 " 
+                className="hoverable cursor-pointer grid grid-cols-27 " 
                 onClick={toggle}
             >
                 <li className="flex justify-center items-center">
@@ -42,6 +43,10 @@ export default memo(function Row ({
                 <li className="p-2 col-span-6">{book?.title}</li>
                 <li className="p-2 col-span-6">{book?.author}</li>
                 <li className="p-2 col-span-6">{book?.publisher}, {book?.release}</li>
+                <li className='flex gap-1 items-center text-blue-500'>
+                    <span>{book?.likes}</span>
+                    <AiFillLike className="" />
+                </li>
             </ul>
 
             {isExpanded && (

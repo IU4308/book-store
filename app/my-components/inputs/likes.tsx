@@ -1,6 +1,7 @@
+import { LikesInputProps } from "@/app/definitions"
 import { Slider } from "@/components/ui/slider"
 
-export default function LikesInput ({ likes, handleLikes } : LikesInput) {
+export default function LikesInput ({ likes, handleLikes } : LikesInputProps) {
     return (
         <fieldset className="w-[200px] flex flex-col gap-5 px-6">
             <div className="flex gap-2">

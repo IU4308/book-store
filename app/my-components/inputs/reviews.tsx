@@ -1,5 +1,6 @@
+import { ReviewsInputProps } from "@/app/definitions"
 
-export default function ReviewsInput ({ reviews, handleReviews } : ReviewsInput) {
+export default function ReviewsInput ({ reviews, handleReviews } : ReviewsInputProps) {
     return (
         <fieldset className="relative  flex flex-col px-6">
             <span className="absolute ml-2 text-gray-400">Review</span>

@@ -1,15 +1,5 @@
 import { LocaleDefinition } from "@faker-js/faker";
 
-export interface BookType {
-    likes: number;
-    reviews: number
-    isbn: string;
-    title: string;
-    author: string;
-    publisher: string;
-    release: number;
-}
-
 export interface HeaderProps {
     locale: LocaleDefinition;
     handleLocale: (local: LocaleDefinition) => void;
@@ -34,12 +24,12 @@ export interface LanguageSelectorProps {
     handleLocale: (local: LocaleDefinition) => void;
 }
 
-export interface LikesInput {
+export interface LikesInputProps {
     likes: number;
     handleLikes: (n: number) => void;
 }
 
-export interface ReviewsInput {
+export interface ReviewsInputProps {
     reviews: number;
     handleReviews: (reviews: number) => void;
 }
