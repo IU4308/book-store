@@ -9,13 +9,15 @@ import { AiFillLike } from 'react-icons/ai';
 
 export default memo(function Row ({ 
     locale,
-    seed, 
+    inputSeed, 
     index, 
     likesAverage,
     reviewsAverage
 } : RowProps) {
     const [isExpanded, setIsExpanded] = useState(false);
     const [book, setBook] = useState<Book | null>(null);
+
+    const seed = inputSeed + index + locale?.metadata?.title?.length! + locale?.metadata?.endonym?.length!;
 
     const toggle = () => {
         setIsExpanded(!isExpanded)
@@ -26,8 +28,8 @@ export default memo(function Row ({
     }
 
     useEffect(() => {
-        handleBook(new Book(locale, seed + index, likesAverage, reviewsAverage))
-    }, [locale, seed, likesAverage, reviewsAverage, index])
+        handleBook(new Book(locale, seed, likesAverage, reviewsAverage))
+    }, [locale, inputSeed, likesAverage, reviewsAverage, index])
 
     return (
         <>

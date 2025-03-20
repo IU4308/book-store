@@ -80,7 +80,7 @@ export default function Home() {
                                 <Row 
                                     index = {index}
                                     locale={locale}
-                                    seed = {deferredSeed} 
+                                    inputSeed = {deferredSeed} 
                                     likesAverage = {deferredLikes}
                                     reviewsAverage = {reviews}  
                                 />

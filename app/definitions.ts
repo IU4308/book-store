@@ -13,7 +13,7 @@ export interface HeaderProps {
 
 export interface RowProps {
     locale: LocaleDefinition;
-    seed: number;
+    inputSeed: number;
     index: number;
     likesAverage: number;
     reviewsAverage: number;
