@@ -17,7 +17,7 @@ export default memo(function Row ({
     const [isExpanded, setIsExpanded] = useState(false);
     const [book, setBook] = useState<Book | null>(null);
 
-    const seed = inputSeed + index + locale?.metadata?.title?.length! + locale?.metadata?.endonym?.length!;
+    const seed = inputSeed + index + (locale?.metadata?.title?.length ?? 0) + (locale?.metadata?.endonym?.length ?? 0);
 
     const toggle = () => {
         setIsExpanded(!isExpanded)
@@ -29,7 +29,7 @@ export default memo(function Row ({
 
     useEffect(() => {
         handleBook(new Book(locale, seed, likesAverage, reviewsAverage))
-    }, [locale, inputSeed, likesAverage, reviewsAverage, index])
+    }, [locale, seed, likesAverage, reviewsAverage, index])
 
     return (
         <>
