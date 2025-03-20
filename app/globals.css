@@ -144,7 +144,7 @@ th {
   padding: 0.5rem;
 }
 
-.header-top, .header-bottom {
+/* .header-top, .header-bottom {
   position: sticky;
   background-color: white;
 }
@@ -154,5 +154,5 @@ th {
 }
 .header-bottom {
   top: 80px
-}
+} */
 

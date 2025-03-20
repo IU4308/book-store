@@ -1,27 +1,53 @@
 'use client'
-import { FaChevronDown } from "react-icons/fa6"
+import { memo, useEffect } from 'react';
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6"
 import RowContent from "./RowContent"
 import { useState } from "react"
+import { Book } from '../Book';
+import { RowProps } from '../definitions';
 
-export default function Row () {
+export default memo(function Row ({ 
+    locale,
+    seed, 
+    index, 
+    likesAverage,
+    reviewsAverage
+} : RowProps) {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [book, setBook] = useState<Book | null>(null);
+
     const toggle = () => {
         setIsExpanded(!isExpanded)
     }
 
+    const handleBook = (book: Book) => {
+        setBook(book)
+    }
+
+    useEffect(() => {
+        handleBook(new Book(locale, seed + index, likesAverage, reviewsAverage))
+    }, [locale, seed, likesAverage, reviewsAverage, index])
+
     return (
         <>
-            <tr className="text-left hoverable" onClick={toggle}>
-                <td><FaChevronDown /></td>
-                <td className="p-2 font-bold">1</td>
-                <td className="p-2">888-8-88-88888-8</td>
-                <td className="p-2">Text Text Text</td>
-                <td className="p-2">John Doe</td>
-                <td className="p-2">Text Text, 2025</td>
-            </tr>
+            <ul 
+                className="hoverable cursor-pointer grid grid-cols-26 " 
+                onClick={toggle}
+            >
+                <li className="flex justify-center items-center">
+                    {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
+                </li>
+                <li className="p-2 font-bold">{index + 1}</li>
+                <li className="p-2 col-span-6">{book?.isbn}</li>
+                <li className="p-2 col-span-6">{book?.title}</li>
+                <li className="p-2 col-span-6">{book?.author}</li>
+                <li className="p-2 col-span-6">{book?.publisher}, {book?.release}</li>
+            </ul>
 
-            {isExpanded && <RowContent />}
-        
+            {isExpanded && (
+                <RowContent 
+                    book={book!}
+                />)}
         </>
     )
-}
+})

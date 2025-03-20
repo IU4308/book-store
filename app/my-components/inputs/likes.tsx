@@ -1,15 +1,29 @@
 import { Slider } from "@/components/ui/slider"
 
-export default function LikesInput () {
+export default function LikesInput ({ likes, handleLikes } : LikesInput) {
     return (
-        <td className="header-top">
-            <fieldset className="w-[200px] flex flex-col gap-5 px-6">
-                <div className="flex gap-2">
-                    <span className="text-gray-400">Likes</span>
-                    <span>4.5</span>
-                </div>
-                <Slider defaultValue={[33]} max={100} step={1} />
-            </fieldset>
-        </td>
+        <fieldset className="w-[200px] flex flex-col gap-5 px-6">
+            <div className="flex gap-2">
+                <span className="text-gray-400">Likes</span>
+                <input 
+                    type="number" 
+                    className=" focus:outline-none"
+                    min={0.01}
+                    value={likes}
+                    onChange={(e) => {
+                        handleLikes(Number(e.target.value))
+                    }}
+                />
+            </div>
+            <Slider 
+                value={[likes]}
+                onValueChange={([num]) => {
+                    handleLikes(num)
+                }}
+                max={10} 
+                step={0.05} 
+                
+            />
+        </fieldset>
     )
 }
